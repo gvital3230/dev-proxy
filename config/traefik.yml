@@ -1,14 +1,10 @@
-#static traefik config
-#
-log:
-  level: DEBUG
 api:
   insecure: true
 providers:
   docker:
     exposedByDefault: false
   file:
-    filename: "/config/tls.yml"
+    directory: "/config"
 entrypoints:
   web:
     address: ":80"

@@ -31,6 +31,12 @@ This docker compose stack provides network `app-dev-mesh` which all services **M
       - "traefik.http.routers.<service-name>.rule=Host(`<service-name>.local`)"
       - "traefik.http.routers.<service-name>.entrypoints=websecure"
     ```
+3. To add CORS which allows any origin headers to your service, you can use predefined middleware `cors-allow-all`:
+    ```yaml
+    labels:
+      - "traefik.http.routers.widgets-widgets.middlewares=cors-allow-all"
+    ```
+
 
 ## Using Custom TLS Certificates
 
