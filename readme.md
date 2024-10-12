@@ -40,11 +40,13 @@ This docker compose stack provides network `app-dev-mesh` which all services **M
 
 ## Using Custom TLS Certificates
 
-It is possible to provide custom ssl certificates and use them as trusted in your system  This can prevent warnings from browser. Certificates are located in `cert` directory.
-If you need to issue a new certificate for a domain, use the following command:
+It is often annoying to work with self-signed certificates in development. And to confirm every time that you trust the certificate in your browser. 
+To avoid it you can generate self-signed ssl certificates and then use them as trusted in your system. Certificates are located in `cert` directory.
+
+If you want to issue a new certificate for a domain, use the following command:
 
 ```bash
-make cert name=<domain>
+make cert name=<your-service-dns-name>
 ```
 
 This will:
