@@ -1,0 +1,22 @@
+#static traefik config
+#
+log:
+  level: DEBUG
+api:
+  insecure: true
+providers:
+  docker:
+    exposedByDefault: false
+  file:
+    filename: "/config/tls.yml"
+entrypoints:
+  web:
+    address: ":80"
+    http:
+      redirections:
+        entrypoint:
+          to: websecure
+  websecure:
+    address: ":443"
+    http:
+      tls: {}
