@@ -4,6 +4,8 @@ This project serves as a proxy for various Docker Compose projects during the lo
 
 It provides also SSL termination, so application project environment should not care about it. It can expose any port that is needed to it  and just need to register itself in this proxy to became available on 443 port of host machine.
 
+![[./doc/architecture.drawio.svg]](./doc/architecture.drawio.svg)
+
 ## Getting Started
 
 To set up and run the proxy, follow these steps:
